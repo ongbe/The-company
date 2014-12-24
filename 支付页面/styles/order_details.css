@@ -1,0 +1,45 @@
+#position_link{width:1000px;height:20px;line-height:20px;margin:0 auto;}
+#position_link a{font-size:12px;color:#1e1e1e;}
+#order_noticeinfo{width:998px;height:106px;border:1px solid #ffe037;background:#fffbe7;margin:20px auto;position:relative;}
+.order_status{width:400px;height:60px;margin-left:20px;margin-top:23px;float:left;}
+.order_status p{height:20px;line-height:20px;}
+.order_status .txt_orderstatus{font-size:16px;font-weight:bold;height:24px;line-height:24px;margin-bottom:14px;}
+.order_status .txt_orderstatus span{color:#d8110b;font-size:18px;}
+.order_price{width:120px;height:60px;margin-right:100px;margin-top:23px;float:right;}
+.order_price p{text-align: center;height:20px;line-height:20px;}
+.order_price .txt_orderprice{font-size:20px;color:#d8110b;height:24px;line-height:24px;margin-top:12px;position:relative;left:-6px;}
+
+#main_orderinfo{width:1000px;margin:0 auto 60px;}
+.order_Info, .market_Info{width:660px;height:60px;margin-bottom:40px;}
+.market_Info{width:660px;height:80px;margin-bottom:34px;}
+.order_Info h2, .market_Info h2{font-size:16px;color:#1e1e1e;margin-bottom:14px;}
+.order_Info p, .market_Info p{width:330px;height:24px;line-height:24px;float:left;}
+.btn_order_pay{width:130px;height:34px;display:block;font-size:16px;color:#fff;background:#df4252;line-height:34px;text-align:center;}
+.btn_order_pay:hover{text-decoration:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

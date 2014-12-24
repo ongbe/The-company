@@ -1,0 +1,104 @@
+.width230{width:230px;}
+.width410{width:410px;}
+.width160{width:160px;}
+.width200{width:200px;}
+
+.width210{width:210px;}
+.width140{width:140px;}
+.width160{width:160px;}
+.width120{width:120px;}
+.width80{width:80px;}
+.width120{width:120px;}
+.width180{width:180px;}
+
+#banner{width:1000px;height:62px;margin:-22px auto 0;background:url(../images/my_account_ad.png);}
+#account_area{width:1000px;margin:0 auto;margin-bottom:70px;}
+.account_title{width:1000px;height:30px;color:#1e1e1e;margin:20px 0;border-bottom:4px solid #e5e5e5;}
+.account_title h2{float:left;font-size:16px;color:#1e1e1e;cursor:pointer;}
+.account_title h2:hover{border-bottom:4px solid #f3b0b7;}
+.my_market{width:150px;height:30px;border-bottom:4px solid #e5e5e5;text-align:center;}
+.account_title h2.linked{border-bottom:4px solid #df4252;}
+.order_history{width:120px;height:30px;text-align:center;}
+.order_history span{color:#d8110b;}
+/* 港股区域样式 */
+/*有内容的表格样式*/
+.HK_stocks_area{width:1000px;clear:both;display:none;}
+.HK_stocks_head, .market_package_head{height:44px;background:#95be3e;border-bottom:1px solid #87a940;position:relative;}
+.HK_stocks_head p, .market_package_head p{color:#ecf3e0;font-size:16px;height:44px;line-height:44px;text-align:center;position:absolute;}
+.txt_HKstocks{width:160px;left:0px;}
+.effect_days{width:170px;right:250px;}
+.effect_days span{font-size:20px;}
+.HK_stocks_head .extend_HKstocks{width:154px;height:32px;line-height:32px;background:#5b8603;right:66px;top:7px;cursor:pointer;}
+.HK_stocks_head .extend_HKstocks:hover{background:#84c007;}
+.Hk_table_content{width:998px;min-height:100px;display:block;border:1px solid #e2e2e2;}
+.Hk_table_content thead, .Hk_table_empty thead{width:998px;height:32px;background:#ebebeb;display:block;line-height:26px;text-align:center;}
+.Hk_table_content thead th, .Hk_table_empty thead th{font-size:12px;color:#1e1e1e;font-weight:normal;}
+.Hk_table_content tbody tr{width:998px;height:40px;line-height:38px;font-size:14px;text-align:center;display:block;margin-left:-2px;}
+.Hk_table_content tbody tr:nth-child(2n){background:#f7f7f7;}
+.Hk_table_content .valid{width:19px;height:17px;display:inline-block;background:url(../images/deal_suc_fail.png) 0 0 no-repeat;position:relative;top:3px;left:-2px;}
+.Hk_table_content .invalid{width:19px;height:17px;display:inline-block;background:url(../images/deal_suc_fail.png) 0 -17px no-repeat;position:relative;top:3px;left:-2px;}
+/*空表格样式*/
+.HK_stocks_empty{width:1000px;height:326px;display:none;}
+.Hk_table_area{width:998px;height:282px;border:1px solid #e2e2e2;}
+.Hk_table_empty{width:998px;height:250px;display:block;background:url(../images/table_empty_bg.png) center top no-repeat;}
+.btn_book_stocks{width:160px;height:32px;margin:-30px auto 0px;color:#ecf3e0;font-size:16px;line-height:32px;background:#80ad22;cursor:pointer;text-align:center;}
+.btn_book_stocks:hover{background:#6f961b;}
+/* 行情包样式 */
+.market_package_area{width:1000px;clear:both;margin-top:40px;display:none;}
+.market_package_head{background:#ed5565;border-bottom:1px solid #df4252;}
+.txt_MKpackage{width:220px;left:0px;}
+.market_package_head .extend_MKpackage{width:154px;height:32px;line-height:32px;background:#c71c1c;right:66px;top:7px;cursor:pointer;}
+.market_package_head .extend_MKpackage:hover{background:#f01a1a;}
+.MKpackage_table_content{width:1000px;height:200px;border:1px solid #e2e2e2;}
+
+/* 历史订单部分样式 */
+.order_history_area{width:1000px;min-height:44px;clear:both;}
+
+.OH_table_content{width:998px;min-height:100px;display:block;border:1px solid #e2e2e2;}
+.OH_table_content thead, .OH_table_content thead{width:998px;height:32px;background:#e1e1e1;display:block;line-height:26px;text-align:center;}
+.OH_table_content thead th, .OH_table_content thead th{font-size:12px;color:#1e1e1e;font-weight:normal;}
+.OH_table_content tbody tr{width:998px;height:66px;line-height:32px;font-size:14px;text-align:center;display:block;margin-left:-2px;}
+.OH_table_content tbody tr td{padding-top:16px;}
+.OH_table_content tbody tr td.trade_status{padding-top:0px;}
+.OH_table_content tbody tr:nth-child(2n){background:#f7f7f7;}
+.OH_table_content tbody tr a{font-size:12px;}
+.OH_table_content td span.order_status{display:block;width:120px;height:20px;text-align:center;}
+.OH_table_content td span.unpaid{color:#d8110b;}
+.OH_table_content td .details_link{display:block;width:50px;height:20px;margin:0 auto;color:#1e1e1e;}
+.OH_table_content td .pay_link{padding:8px 20px;color:#fff;background-color:#df4252;text-decoration: none;}
+.OH_table_content td .cancel_link{width:19px;height:19px;display:inline-block;background:url(../images/order_cancel.png);margin-left:16px;position:relative;bottom:-4px;cursor:pointer;}
+.OH_table_content td .cancel_link:hover{background-position:0px -19px;}
+
+/* "取消订单"确认窗口样式 */
+#confirmCancel_box{width:398px;height:178px;border:6px solid #b7a9a9;position:fixed;left:0;top:0;bottom:0;right:0;margin:auto;background:#fff;z-index:100;display:none;}
+.window_title{width:388px;height:32px;font-size:14px;color:#fff;line-height:32px;background:#df4252;padding-left:10px;}
+.window_title p{float:left;}
+.window_title p.box_btn_close{width:32px;height:32px;float:right;background:url(../images/btn_window_close.png) 0 0 no-repeat;cursor:pointer;}
+.window_title p.box_btn_close:hover{background-position:-32px 0;}
+.window_content{width:398px;height:70px;text-align:center;font-size:18px;padding-top:25px;}
+.window_content .widnow_info_two{font-size:14px;margin-top:10px;}
+.window_btns{width:190px;height:26px;margin:4px auto 0;}
+.window_btns input{width:82px;height:26px;display:block;text-align:center;line-height:24px;cursor:pointer;background:#df4252;float:left;color:#fff;font-size:12px;font-family:"Microsoft YaHei";}
+.window_btns .window_btn_cancel{background:#e1e1e1;color:#1e1e1e;float:right;}
+#confirmCancel_layer{width:100%;height:100%;opacity:0.5;position:fixed;left:0;top:0;z-index:10;background:#000;display:none;}
+
+/* 页码部分样式 */
+.pages_area{width:500px;height:30px;margin:0 auto;clear:both;margin-top:40px;color:#1e1e1e;}
+.page_nums{width:270px;height:30px;float:left;}
+.page_nums a{width:30px;height:30px;line-height:30px;display:block;float:left;margin-left:9px;background:#f4f4f4;text-decoration:none;text-align:center;color:#1e1e1e;font-size:12px;}
+.page_nums a.active{background-color:#df4252 !important;color:#fff;}
+.page_nums a:hover{background-color:#e5e5e5;}
+.page_nums .page_prev{background:url(../images/order_pages.png) 0 0 no-repeat;margin-left:0px;}
+.page_nums .page_prev:hover{background-position:-60px 0px;background-color:none;}
+.page_nums .page_next{background:url(../images/order_pages.png) -30px 0 no-repeat;}
+.page_nums .page_next:hover{background-position:-90px 0px;background-color:none;}
+.page_method{width:220px;margin-left:10px;float:left;}
+.page_method p{float:left;}
+.page_method p, .page_method p span{height:30px;line-height:30px;}
+.page_method p input{width:30px;height:26px;line-height:26px;border:1px solid #dfdfdf;margin:0 3px;position:relative;top:-1px;text-align:center;}
+.page_method .btn_toApage{width:70px;height:30px;background:#df4252;text-align:center;margin-left:10px;cursor:pointer;color:#fff;}
+
+
+
+
+

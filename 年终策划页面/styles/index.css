@@ -1,0 +1,49 @@
+html,body,div,ul,li,p,span,h1,h2,h3,h4,table,tr,td,th{margin:0px;padding:0px;}
+input,img,table,tr,td{border:0px;}
+input,textarea{outline-style:none;}
+li{list-style: none;}
+a{text-decoration:none;}
+a:hover{text-decoration: underline;}
+body{font:14px 'Microsoft YaHei';}
+@font-face{
+	font-family: 'FZLanTYJW_Xian';
+	src:url('../fonts/FZLanTYJW_Xian.TTF');
+}
+
+#index_page{width:1280px;background:url(../images/index_bg.png);margin:0 auto;overflow: hidden;position:relative;}
+.finance_logo{width:148px;height:44px;display:block;background:url(../images/finance_logo.png);}
+#index_page h2{font-weight:lighter;font-size:34px;color:#777;font-family:'FZLanTYJW_Xian';margin:140px 0 0 160px;}
+.index_info{width:346px;height:90px;margin:246px 0 0 132px;line-height:30px;font-size:;color:#626262;font-size:18px;border-left:4px solid #17a4ff;padding-left:26px;}
+.index_footer{color:#626262;font-size:14px;line-height:20px;position:absolute;left:162px;bottom:24px;}
+.count_down{width:124px;height:56px;background:url(../images/count_bg.png);position:absolute;left:578px;bottom:2px;line-height:60px;text-align:center;font-size:40px;color:#fff;}
+
+#main_page{width:1280px;height:800px;display:block;margin:0 auto;background:url(../images/main_bg.png);position:relative;}
+#main_page h2 {font-weight:lighter;font-size:34px;color:#777;font-family:'FZLanTYJW_Xian';padding:44px 0 0 44px;}
+#main_page p{width:180px;height:180px;position:absolute;transform:rotate(-45deg);cursor:pointer;}
+.default_pic01{background:url(../images/default/default01.png);left:184px;bottom:273px;}
+.default_pic02{background:url(../images/default/default02.png);left:312px;bottom:145px;}
+.default_pic03{background:url(../images/default/default03.png);left:441px;bottom:273px;}
+.default_pic04{background:url(../images/default/default04.png);left:570px;bottom:145px;}
+.default_pic05{background:url(../images/default/default05.png);right:402px;bottom:273px;}
+.default_pic06{background:url(../images/default/default06.png);right:272px;bottom:402px;}
+.default_pic07{background:url(../images/default/default07.png);right:144px;bottom:273px;}
+
+#main_page .hover_status{background:red;}
+#hiddenLayer{width:100%;height:100%;background:#000;opacity:0.5;position:fixed;left:0;top:0;bottom:0;right:0;margin:auto;z-index:10;display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
