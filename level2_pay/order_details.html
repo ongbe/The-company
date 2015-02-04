@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>付款成功</title>
+	<title>订单详情</title>
 	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 	<script type="text/javascript" src="http://i.sso.sina.com.cn/js/user_panel.js" charset="utf-8"></script>
-	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script src="http://i0.sinaimg.cn/cj/data_20140924/js/js_lib/jquery.js"></script>
+	<script type="text/javascript" src="js/detail.js"></script>
+	<script type="text/javascript" src="http://finance.sina.com.cn/basejs/suggestServer.js" charset="gb2312"></script>
+	<script type="text/javascript" src="js/placeholder.js"></script>
+	<script type="text/javascript" src="js/gbk.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
-	<link rel="stylesheet" type="text/css" href="styles/order_success.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/order_details.css"/>
 </head>
 <body>
 	<!-- 顶部开始 -->
@@ -35,34 +40,45 @@
 			<input type="button" value="" />
 			<div class="search_tips"><ul></ul></div>
 		</div>
-		<div class="my_account">
-			<p class="account_pic"></p><p class="account_name">我的账户</p>
-		</div>
 	</div>
 	<!-- 顶部结束 -->
-	<!-- 步骤提示信息开始 -->
-	<div id="steps_info">
-		<div class="step_one">
-			<div class="one_logo"></div>
-			<p><img src="images/complete_icon.png"/> 1 提交订单</p>
-		</div>
-		<div class="step_two">
-			<div class="two_logo"></div>
-			<p><img src="images/complete_icon.png"/>2 订单支付</p>
-		</div>
-		<div class="step_thr">
-			<div class="thr_logo"></div>
-			<p>3 完成订单</p>
-		</div>		
+	<div id="position_link">
+		<a href="my_account.html">我的账户</a> > <a href="my_account.html?link=ls">历史订单</a> > <a href="javascript:;" class="btn_detail">订单详情</a>	
 	</div>
-	<!-- 步骤提示信息结束 -->
-	<!-- 主要内容部分开始 -->
+	<div id="order_noticeinfo">
+		<div class="order_status">
+			<p class="txt_orderstatus">当前订单状态：<span id="txt_status"></span></p>
+			<p class="txt_moreinfo">温馨提示：请您在提交订单后24小时内完成支付，否则订单会自动取消。</p>
+		</div>
+		<div class="order_price">
+			<p>应付：</p>
+			<p class="txt_orderprice">￥ <span id="txt_totalPrice"></span></p>
+		</div>
+	</div>
+	<div id="main_orderinfo">
+		<div class="order_Info">
+			<h2>订单信息</h2>
+			<p>订单编号：<span id="txt_orderNumber"></span></p>
+			<p>下单时间：<span id="txt_orderDate"></span></p>
+			<p class="label_payTerms">付款方式：<span id="txt_payTerms">微博支付（支付宝）</span></p>
+			<p class="label_payDate">付款时间：<span id="txt_payDate"></span></p>
+		</div>
+		<div class="market_Info">
+			<h2>行情信息</h2>
+			<p>行情类别：<span id="txt_marketCategory"></span></p>
+			<p>行情金额：<span id="txt_marketPrice"></span>元</p>
+			<p>有效时间：<span id="txt_marketDays"></span><span id="txt_startTime"></span><span id="txt_endTime"></span></p>
+		</div>
+		<a class="btn_order_pay" href="javascript:;">立即付款</a>
+	</div>
+	
+	<!-- 付款完成部分 -->
 	<div id="order_content">
 		<div class="order_area">
 			<div class="success_logo"><img src="images/success_icon.png" alt="付款成功">付款成功!</div>
 			<div class="order_detail">
 				<div class="order_number">
-					<span class="label" id="labelOrderNum">订单编号:</span><span class="txt" id="txtOrderNum">324325346436456</span>
+					<span class="label" id="labelOrderNum">订单编号:</span><span class="txt" id="txtOrderNum"></span>
 				</div>
 				<div class="product_name">
 					<span class="label" id="labelProductName">商&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品:</span>
@@ -70,12 +86,12 @@
 				</div>
 				<div class="product_price">
 					<span class="label" id="labelProductPrice">金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;额:</span>
-					<span class="txt" id="txtProductPrice">365.00元</span>
+					<span class="txt" id="txtProductPrice"></span>
 				</div>
 				<div class="effect_date">
 					<span class="label" id="labelEffectDate">有效时间:</span>
-					<span class="txt">1年(
-						<span id="starttime">2014-12-01</span> 到 <span id="endtime">2015-11-30</span>)
+					<span class="txt"><span id="txtTotalDate"></span>(
+						<span id="startDate"></span> 到 <span id="endDate"></span> )
 					</span>
 				</div>
 				<div class="the_payee">
@@ -86,9 +102,7 @@
 		</div>
 		<div class="link_more"><a href=""/>查看订单详情</a></div>
 		<div class="line_1000"></div>
-	</div>
-	<!-- 主要内容部分结束 -->
-	<div id="recommend_content">
+		<div id="recommend_content">
 		<h2>投资高手推荐</h2>
 		<div class="investor_lists">
 			<div class="single_area">
@@ -162,12 +176,12 @@
 				<a class="page_prev" href=""></a>
 				<a class="page_next" href=""></a>
 			</div>
-			<div class="another_group"><a href="">换一组</a></div>
-			<div class="more_investor"><a href="">更多高手</a></div>
+			<div class="another_group"><a href="javascript:;">换一组</a></div>
+			<div class="more_investor"><a href="javascript:;">更多高手</a></div>
 		</div>
 	</div>
-		
-		
+	</div>
+	<!-- 付款完成部分结束 -->
 
 	<!-- 底部开始 -->
 	<div id="footer">
@@ -200,5 +214,54 @@
 			<p>新浪财经以及其合作机构不为本页面提供信息的错误、残缺、延迟或因依靠此信息所采取的任何行动负责。市场有风险，投资需谨慎。</p>
 		</div>
 	</div>
+
+	<div id="box">
+		<div class="box_top">
+			<div class="box_picture"></div>
+			<div class="box_notice">
+				<p class="notice_one">付款完成前请不要关闭或刷新此窗口!</p>
+				<p class="notice_two">请在新的页面完成支付操作</p>
+			</div>
+		</div>
+		<div class="box_bottom">
+			<input class="box_btn" type="button" value="完成付款"/><a href="my_account.html?link=ls">没有完成付款</a>
+		</div>
+	</div>
+	<div id="hidden_layer"></div>
+	<script type="text/javascript">
+		$(".head_search input[type=button]").click(function(){
+			var stockCode=$(".head_search input[type=text]").val();
+			var url="";
+			if(stockCode == '' || stockCode=='简称/代码/拼音'){
+				detail.ui.showmsg("请输入搜索关键字",2);
+			}
+			else{
+				var w =window.open();
+				if($("#choose_item_txt").html() == '行情'){
+					url="http://biz.finance.sina.com.cn/suggest/lookup_n.php?country=&q="+stockCode+"&name="+stockCode+"&t=keyword&c=all&k="+stockCode+"&range=all&col=1_7&from=channel";
+				}
+				if($("#choose_item_txt").html() == '股吧'){
+					url ="http://guba.sina.com.cn/?s=bar&name="+stockCode;
+				}
+				if($("#choose_item_txt").html() == '新闻'){
+					url="http://search.sina.com.cn/?q="+$URL.encode(stockCode)+"&range=all&c=news&sort=time";
+					//url ="http://search.sina.com.cn/?q=swe&range=all&c=news&sort=time";
+				}
+				w.location.href = url;
+			}
+		});
+		//绑定用户输入事件
+		(new SuggestServer()).bind({
+	        "input": "theSearchInput",
+	        "value": "@3@",
+	        "head": ["选项", "代码", "名称"],
+	        /*"type": "stock",*/
+	        "type": "11,12,13,14,15,21,22,23,24,25,26,31,32,33,41,42,81,82",
+	        "width": 243,
+	        "target":"_blank",
+	        /*"link": "http://finance.sina.com.cn/realstock/company/@code@/nc.shtml"*/
+	        "link": "http://biz.finance.sina.com.cn/suggest/lookup_n.php?q=@code@"
+	    });
+	</script>
 </body>
 </html>

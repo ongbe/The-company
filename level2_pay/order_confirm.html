@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>确认购买信息</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<script src="http://i0.sinaimg.cn/cj/data_20140924/js/js_lib/jquery.js"></script>
+	<script type="text/javascript" src="http://i.sso.sina.com.cn/js/user_panel.js" charset="utf-8"></script>
+	<script language='javascript' charset='utf-8' src='http://i.sso.sina.com.cn/js/ssologin.js'></script>
+	<script type="text/javascript" src="http://finance.sina.com.cn/basejs/suggestServer.js" charset="gb2312"></script>
+	<script type="text/javascript" src="js/confirm.js"></script>
+	<script type="text/javascript" src="js/placeholder.js"></script>
+	<script type="text/javascript" src="js/gbk.js"></script>
+	<script src="http://ent.sina.com.cn/470/2014/0328/search_suggest.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+<body>
+	<!-- 顶部开始 -->
+	<div id="top">
+		<div class="top_wrap">
+			<div class="hdlink">
+				<a href="http://finance.sina.com.cn" target="_blank">财经首页</a> | 
+				<a href="http://www.sina.com" target="_blank">新浪首页</a> | 
+				<a href="http://news.sina.com.cn/guide/" target="_blank">新浪导航</a>
+			</div>
+			<div id="userLogin"></div>
+		</div>	
+	</div>
+	<div id="header">
+		<div class="logo"></div>
+		<div class="head_search">
+			<h2 id="choose_item"><span id="choose_item_txt">行情</span><img src="images/list_arrow.png" alt="list_arrow" /></h2>
+			<ul class="options">
+				<li>行情</li>
+				<li>股吧</li>
+				<li>新闻</li>
+			</ul>
+			<input type="text" id="theSearchInput" placeholder="简称/代码/拼音" />
+			<input type="button" value="" />
+			<div class="search_tips"><ul></ul></div>
+		</div>
+		<div class="my_account">
+			<p class="account_pic"></p><a target="_blank" class="account_name" href="my_account.html">我的账户</a>
+		</div>
+	</div>
+	<!-- 顶部结束 -->
+	<!-- 步骤提示信息开始 -->
+	<div id="steps_info">
+		<div class="step_one">
+			<div class="one_logo"></div>
+			<p><img src="images/complete_icon.png"/> 1 提交订单</p>
+		</div>
+		<div class="step_two">
+			<div class="two_logo"></div>
+			<p>2 订单支付</p>
+		</div>
+		<div class="step_thr">
+			<div class="thr_logo"></div>
+			<p><img src="images/complete_icon.png"/>3 完成订单</p>
+		</div>		
+	</div>
+	<!-- 步骤提示信息结束 -->
+	<!-- 主要内容部分开始 -->
+	<div id="pay_content">
+		<div class="step_one_info">
+			<div class="user_name">
+				<span class="label" id="labelUserName">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称:</span>
+				<span class="txt" id="txtUserName"></span>
+			</div>
+			<div class="product_name">
+				<span class="label" id="labelProductName">产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品:</span>
+				<span class="txt" id="txtProductName">付费行情</span>
+			</div>
+			<div class="choose_market">
+				<p class="label" id="labelMarketName">选择市场:</p>
+				<form class="txt market_lists">
+					
+				</form>
+			</div>
+			<p class="recommand_icon"><img src="images/recommend_bg.png" alt="recommand" /></p>
+			<div class="choose_duration_hk choose_duration">
+				<p class="lable" id="labelDurationName">选择时长:</p>
+				<form id="lists_hk" class="txt duration_lists">
+					<!-- <div class="package_one checked" value=''>
+						<input type="radio" name="durations" value="1" checked="checked">
+						<span class="date active"></span><span class="price active"></span>
+					</div>
+					<div class="package_two" value=''>
+						<input type="radio" name="durations" value="2">
+						<span class="date"></span><span class="price"></span>
+					</div>
+					<div class="package_thr" value=''>
+						<input type="radio" name="durations" value="3">
+						<span class="date"></span><span class="price"></span>
+					</div> -->
+				</form>
+			</div>
+			<div class="choose_duration_hqb choose_duration">
+				<p class="lable" id="labelDurationName">选择时长:</p>
+				<form id="lists_hqb" class="txt duration_lists">
+					<!-- <div class="package_one checked" value=''>
+						<input type="radio" name="durations" value="1" checked="checked">
+						<span class="date active"></span><span class="price active"></span>
+					</div>
+					<div class="package_two" value=''>
+						<input type="radio" name="durations" value="2">
+						<span class="date"></span><span class="price"></span>
+					</div>
+					<div class="package_thr" value=''>
+						<input type="radio" name="durations" value="3">
+						<span class="date"></span><span class="price"></span>
+					</div> -->
+				</form>
+			</div>
+			<div class="choose_duration_hq choose_duration" style="display:none;">
+				<p class="lable" id="labelDurationName">选择时长:</p>
+				<form id="lists_hq" class="txt duration_lists">
+					<div class="package_one checked" value=''>
+						<input type="radio" name="durations" value="1" checked="checked">
+						<span class="date active">1年</span><span class="price active">365元</span>
+					</div>
+					<div class="package_two" value=''>
+						<input type="radio" name="durations" value="2">
+						<span class="date">6个月</span><span class="price">200元</span>
+					</div>
+					<div class="package_thr" value=''>
+						<input type="radio" name="durations" value="3">
+						<span class="date">3个月</span><span class="price">150元</span>
+					</div>
+				</form>
+			</div>
+			<div class="total_price">
+				<p class="label" id="labelTotalPrice">应付金额:</p>
+				<p class="txt">
+					<span id="txtTotalPrice"></span>元
+					</span>
+				</p>
+			</div>
+			<a class="btn_submit" href="javascript:;" onclick="confirm.ui.submitOrder();"></a>
+		</div>
+	</div>
+	<!-- 主要内容部分结束 -->
+
+	<div id="ads_content" style="display:none;">
+		<div class="main_ads">
+			广告区域
+		</div>
+		<div class="line_1000"></div>
+		<div class="activity_sale">
+			<h2>活动优惠</h2>
+			<p class="question">1、如何获得订阅优惠?</p>
+			<p>活动期间去东兴证券成功开户，即可享受行情订阅5折优惠，优惠部分我们会返还到您的个人账户中。</p>
+			<p class="question">2、可以获得多次优惠吗？</p>
+			<p>活动期间，每个用户仅可享受一次优惠。</p>
+		</div>
+	</div>
+	<div class="line_whole"></div>
+	
+	<!-- 付款完成页面主要内容开始-->
+	<div id="order_content">
+		<div class="order_area">
+			<div class="success_logo"><img src="images/success_icon.png" alt="付款成功">付款成功!</div>
+			<div class="order_detail">
+				<div class="order_number">
+					<span class="label" id="labelOrderNum">订单编号:</span><span class="txt" id="txtOrderNum"></span>
+				</div>
+				<div class="product_name">
+					<span class="label" id="labelProductName">商&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品:</span>
+					<span class="txt" id="txtProductName">付费行情</span>
+				</div>
+				<div class="product_price">
+					<span class="label" id="labelProductPrice">金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;额:</span>
+					<span class="txt" id="txtProductPrice"></span>
+				</div>
+				<div class="effect_date">
+					<span class="label" id="labelEffectDate">有效时间:</span>
+					<span class="txt"><span id="txtTotalDate">1年</span>(
+						<span id="startDate">2014-12-01</span> 到 <span id="endDate">2015-11-30</span> )
+					</span>
+				</div>
+				<div class="the_payee">
+					<span class="label" id="labelThePayee">收&nbsp;&nbsp;款&nbsp;&nbsp;方:</span>
+					<span class="txt" id="txtThePayee">新浪财经</span>
+				</div>
+			</div>
+		</div>
+		<div class="link_more"><a href="javascript:;"/>查看订单详情</a></div>
+		<div class="line_1000"></div>
+		<div id="recommend_content" style="display:none;">
+		<h2>投资高手推荐</h2>
+		<div class="investor_lists">
+			<div class="single_area">
+				<div class="investor_pic"><img src="images/success_icon.png"></div>
+				<div class="investor_info">
+					<h4 class="txtName">老股民</h4>
+					<table class="investor_details">
+						<tr>
+							<td>总收益 :</td><td class="per_profit">43.21%</td><td class="single">成&nbsp;&nbsp;功&nbsp;率 :</td><td>34%</td>
+						</tr>
+						<tr>
+							<td>总排名 :</td><td>23423</td><td class="single">推荐理由 :</td><td>善抓热门股</td>
+						</tr>
+					</table>
+				</div>
+				<div class="investor_reserve"></div>
+			</div>
+			<div class="single_area double">
+				<div class="investor_pic"><img src="images/success_icon.png"></div>
+				<div class="investor_info">
+					<h4 class="txtName">老股民</h4>
+					<table class="investor_details">
+						<tr>
+							<td>总收益 :</td><td class="per_profit">43.21%</td><td class="single">成&nbsp;&nbsp;功&nbsp;率 :</td><td>34%</td>
+						</tr>
+						<tr>
+							<td>总排名 :</td><td>23423</td><td class="single">推荐理由 :</td><td>善抓热门股</td>
+						</tr>
+					</table>
+				</div>
+				<div class="investor_reserve"></div>
+			</div>
+			<div class="single_area">
+				<div class="investor_pic"><img src="images/success_icon.png"></div>
+				<div class="investor_info">
+					<h4 class="txtName">老股民</h4>
+					<table class="investor_details">
+						<tr>
+							<td>总收益 :</td><td class="per_profit">43.21%</td><td class="single">成&nbsp;&nbsp;功&nbsp;率 :</td><td>34%</td>
+						</tr>
+						<tr>
+							<td>总排名 :</td><td>23423</td><td class="single">推荐理由 :</td><td>善抓热门股</td>
+						</tr>
+					</table>
+				</div>
+				<div class="investor_reserve"></div>
+			</div>
+			<div class="single_area double">
+				<div class="investor_pic"><img src="images/success_icon.png"></div>
+				<div class="investor_info">
+					<h4 class="txtName">老股民</h4>
+					<table class="investor_details">
+						<tr>
+							<td>总收益 :</td><td class="per_profit">43.21%</td><td class="single">成&nbsp;&nbsp;功&nbsp;率 :</td><td>34%</td>
+						</tr>
+						<tr>
+							<td>总排名 :</td><td>23423</td><td class="single">推荐理由 :</td><td>善抓热门股</td>
+						</tr>
+					</table>
+				</div>
+				<div class="investor_reserved"></div>
+			</div>
+		</div>
+		<div class="pages_area">
+			<div class="page_single">
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a class="active" href=""></a>
+				<a class="btn_page_prev" href=""></a>
+				<a class="btn_page_next" href=""></a>
+			</div>
+			<div class="another_group"><a href="javascript:;">换一组</a></div>
+			<div class="more_investor"><a href="javascript:;">更多高手</a></div>
+		</div>
+	</div>
+	</div>
+	<!-- 主要内容部分结束 -->
+	
+	<!-- 底部开始 -->
+	<div id="footer">
+		<div class="footer_nav">
+			客户服务热线：4006900000　　欢迎批评指正
+			<br>
+			<a target="_blank" href="http://tech.sina.com.cn/focus/sinahelp.shtml">常见问题解答</a>
+			<a target="_blank" href="http://net.china.cn/chinese/index.htm">互联网违法和不良信息举报</a>
+			<a target="_blank" href="http://comment5.news.sina.com.cn/comment/skin/feedback.html?channel=ly&amp;newsid=5">新浪财经意见反馈留言板</a>
+			<br>
+			<br>
+			<a href="http://corp.sina.com.cn/chn/">新浪简介</a> | 
+			<a href="http://corp.sina.com.cn/eng/">About Sina</a> | 
+			<a href="http://emarketing.sina.com.cn/">广告服务</a> | 
+			<a href="http://www.sina.com.cn/contactus.html">联系我们</a> | 
+			<a href="http://corp.sina.com.cn/chn/sina_job.html">招聘信息</a> | 
+			<a href="http://www.sina.com.cn/intro/lawfirm.shtml">网站律师</a> | 
+			<a href="http://english.sina.com">SINA English</a> | 
+			<a href="https://login.sina.com.cn/signup/signup.php">通行证注册</a> | 
+			<a href="http://help.sina.com.cn/">产品答疑</a>
+			<br>
+			<br>
+			Copyright &copy; 1996-2014 SINA Corporation, All Rights Reserved
+			<br>
+			<br>
+			新浪公司　<a href="http://corp.sina.com.cn/chn/copyright.html">版权所有</a>
+		</div>
+		<div class="footer_info">
+			<p>新浪财经免费提供股票、基金、债券、外汇等行情数据以及其他资料均来自相关合作方，仅作为用户获取信息之目的，并不构成投资建议。</p>
+			<p>新浪财经以及其合作机构不为本页面提供信息的错误、残缺、延迟或因依靠此信息所采取的任何行动负责。市场有风险，投资需谨慎。</p>
+		</div>
+	</div>
+	<div id="box">
+		<div class="box_top">
+			<div class="box_picture"></div>
+			<div class="box_notice">
+				<p class="notice_one">付款完成前请不要关闭或刷新此窗口!</p>
+				<p class="notice_two">请在新的页面完成支付操作</p>
+			</div>
+		</div>
+		<div class="box_bottom">
+			<input class="box_btn" type="button" value="完成付款"/><a href="my_account.html?link=ls">没有完成付款</a>
+		</div>
+	</div>
+	<div id="hidden_layer"></div>
+	<script type="text/javascript">
+		$(".head_search input[type=button]").click(function(){
+			var stockCode=$(".head_search input[type=text]").val();
+			var url="";
+			if(stockCode == '' || stockCode=='简称/代码/拼音'){
+				confirm.tools.showmsg("请输入搜索关键字",2);
+			}
+			else{
+				var w =window.open();
+				if($("#choose_item_txt").html() == '行情'){
+					url="http://biz.finance.sina.com.cn/suggest/lookup_n.php?country=&q="+stockCode+"&name="+stockCode+"&t=keyword&c=all&k="+stockCode+"&range=all&col=1_7&from=channel";
+				}
+				if($("#choose_item_txt").html() == '股吧'){
+					url ="http://guba.sina.com.cn/?s=bar&name="+stockCode;
+				}
+				if($("#choose_item_txt").html() == '新闻'){
+					url="http://search.sina.com.cn/?q="+$URL.encode(stockCode)+"&range=all&c=news&sort=time";
+					//url ="http://search.sina.com.cn/?q=swe&range=all&c=news&sort=time";
+				}
+				w.location.href = url;
+			}
+		});
+		//绑定用户输入事件
+		(new SuggestServer()).bind({
+	        "input": "theSearchInput",
+	        "value": "@3@",
+	        "head": ["选项", "代码", "名称"],
+	        /*"type": "stock",*/
+	        "type": "11,12,13,14,15,21,22,23,24,25,26,31,32,33,41,42,81,82",
+	        "width": 243,
+	        "target":"_blank",
+	        /*"link": "http://finance.sina.com.cn/realstock/company/@code@/nc.shtml"*/
+	        "link": "http://biz.finance.sina.com.cn/suggest/lookup_n.php?q=@code@"
+	    });
+	</script>
+</body>
+</html>
