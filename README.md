@@ -13,3 +13,5 @@ nodejs抓数据，是我运用nodejs实现跨域抓取网页数据的一个工�
 
 
 sina财经的大数据地址是：http://finance.sina.com.cn/data/#visual-gnzz
+
+level2行情购买项目的预览地址：http://stock.finance.sina.com.cn/stock/buy.php
